@@ -1,0 +1,23 @@
+.week{
+    background-color: #009879;
+    color:#ffffff;
+    text-align: center;
+    font-weight: bold;
+}
+.pre{
+    float: left;
+}
+.next{
+    float: right;
+}
+
+.inputTime input{
+    width: 20%;
+    height: 100%;
+    color:#009879;
+    bottom: 0px;
+    border: none;
+    left: 0%;
+    border-bottom: 1px solid black;
+    text-align: center;
+}

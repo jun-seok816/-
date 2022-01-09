@@ -1,0 +1,31 @@
+*{font-family: 'Nanum Pen Script', cursive; font-size: 1.2em;}
+table{
+    border-collapse: collapse;
+    margin :20px 0;
+    font-size: 0.9em;
+    min-width: 100%;
+    border-radius: 15px 15px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+}
+
+thead tr td{
+    text-align : center;
+    padding: 0.3em ;
+}
+
+tbody tr td{
+    text-align: center;
+    padding: 0.3em;
+}
+tbody tr{
+    border-bottom: 1px solid #dddddd;
+}
+
+tbody tr:nth-of-type(even){
+    background-color: #f3f3f3;
+}
+
+tbody tr:last-of-type{
+    border-bottom: 2px solid #009879;
+}
