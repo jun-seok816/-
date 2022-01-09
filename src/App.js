@@ -28,10 +28,6 @@ function App() {
             p_month = {month}/>
         <Tbody p_year = {year} p_month = {month}/>
       </table>
-      {/* 년도: <input type="number" name="Year" id="Year" onChange={m_ChangeYear}/><br/>
-      월  : <input type="number" name="Month" id="Month" onChange={m_ChangeMonth}/><br/>
-      일  : <input type="number" name="Day" id="Day" onChange={m_ChangeDay}/><br/>
-      <input type="number" name="Plusday" id="Plusday" onChange={m_ChangePlusDay}/>일 후<br/> */}
       <Textarea/>
     </div>
   );

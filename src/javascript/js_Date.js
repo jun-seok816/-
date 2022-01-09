@@ -1,19 +1,41 @@
+/**
+ * @ClassDescripton
+ *  달력에 필요한 메소드를 담아두고 있는 클래스
+ */
 
 export default class js_Date {
+    /**
+     * 
+     * @param {Number} p_year -년도
+     * @param {Number} p_month -월
+     * @param {Number} p_day  -일
+     * @param {Number} p_plusday -특정 일수 더하기
+     */
     constructor(p_year, p_month, p_day, p_plusday) {
         this.iv_year = p_year;
         this.iv_month = p_month;
         this.iv_day = p_day;
         this.iv_plusDay = p_plusday;
     }
-
+    /**
+     *@method sm_GetNowDate 
+     *
+     *@returns 현재 년월일을 param으로 넘긴 js_Date Instance를 return
+     */
     static sm_GetNowDate() {
         let m_Date = new Date();
         return new js_Date(m_Date.getFullYear(), m_Date.getMonth(), m_Date.getDate());
     }
+
     im_getMonthLastDay() {
         return js_Date.sm_getMonthLastDay(this.iv_year, this.iv_month);
     }
+    /**
+     * @method sm_getMonthLastDay - im_getMonthLastDay의 static메소드
+     * @param {Number} p_year -년도
+     * @param {Number} p_month -월
+     * @returns - 년월에 맞는 달의 마지막 일
+     */
     static sm_getMonthLastDay(p_year, p_month) {
         let lastDay = new Array(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
         js_Date.sm_isYunYear(p_year) ? lastDay[1] = 29 : lastDay[1] = 28;
@@ -21,25 +43,15 @@ export default class js_Date {
             return 0;
         return lastDay[p_month - 1];
     }
-    /**                                            +-------------------------
-        * -----------------------------------------+ 윤년 처리
-        *                                         +-------------------------
-        * @description
-        *
-        *
-        *
-        *
-        * let m_Date = new js_Date('2021-12-29');
-        * //m_Date.im_isYunYear();
-        * js_Date.sm_isYunYear(m_Date.iv_Year);
-        *
-        * js_Date.sm_isYunYear(2021);
-        *
-        *
-    **/
+  
     im_isYunYear() {
         return js_Date.sm_isYunYear(this.iv_year);
     }
+    /**
+     * @method sm_isYunYear - im_isYunYear의 static 메소드
+     * @param {Number} p_year -년도
+     * @returns - 윤년이냐 아니냐 true false 리턴
+     */
     static sm_isYunYear(p_year) {
         let m_Result = false;
         if (p_year === 0)
@@ -55,7 +67,11 @@ export default class js_Date {
     im_yunYear() {
         return js_Date.sm_yunYear(this.iv_year);
     }
-
+    /**
+     * @method sm_yunYear - im_yunYear의 static 메소드
+     * @param {Nuber} p_year - 년도
+     * @returns p_year 까지의 윤년이었던 해 수
+     */
     static sm_yunYear(p_year) {
         if (p_year < 1)
             return 0;
@@ -63,18 +79,19 @@ export default class js_Date {
             - Math.trunc(p_year / 100)
             + Math.trunc(p_year / 400);
     }
-    /**                                            +-------------------------
-        * -----------------------------------------+ ?년도 ?월 1일까지의 일수
-        *                                          +-------------------------
-        * @description
-        *
-        *
-        *
-    **/
-     im_getDays() {
-        return js_Date.sm_getDays(this.iv_year, this.iv_month, this.iv_day);
-     }
 
+    im_getDays() {
+        return js_Date.sm_getDays(this.iv_year, this.iv_month, this.iv_day);
+    }
+
+    /**
+     * @method sm_getDays - im_getDays의 static메소드
+     *
+     * @param {Number} p_year - 년도
+     * @param {Number} p_month -월
+     * @param {Number} p_days  - 일
+     * @returns - 년,월,일 에서 0년 1월 1일의 총 일수를 리턴
+     */
     static sm_getDays(p_year, p_month = 1, p_days = 1) {
         let m_Year = p_year;
         let m_BeforeYear = m_Year - 1;
@@ -93,7 +110,10 @@ export default class js_Date {
         return m_Result;
     }
 
-
+    /**
+     * 
+     * @returns 총 일수를 7로 나눠 매월 1일의 요일을 리턴
+     */
     im_getWeekDay() {
         let m_Days = this.im_getDays();
 
@@ -103,14 +123,14 @@ export default class js_Date {
         return m_Result;
 
     }
-    /**                                            +-------------------------
-        * -----------------------------------------+ 일수 더하기 빼기
-        *                                          +-------------------------
-        * @description
-        *
-        *
-        *
-    **/
+    /**
+     * 
+     * @param {Number} p_year -년도
+     * @param {Number} p_month -월
+     * @param {Number} p_day  -일
+     * @param {Number} p_plusday -특정 일수 더하기
+     * @returns -년,월,일에 특정 일수를 더해서 계산한 년 월 일을 리턴
+     */
     im_DayCalculate(p_year, p_month, p_day, p_plusDay = 0) {
         let total = js_Date.sm_getDays(p_year, p_month) + p_day + p_plusDay;
         let m_year = Math.trunc(total / 365);
@@ -137,14 +157,9 @@ export default class js_Date {
         }
         return `${m_year}년${m_month}월${m_남은날수}일`;
     }
-    /**                                            +-------------------------
-        * -----------------------------------------+ 에러 체크
-        *                                          +-------------------------
-        * @description
-        *
-        *
-        *
-    **/
+    /**
+     *  @method error_check - 모든 일수를 반복문으로 돌려 함수가 제대로된 값을 산출하는지 체크
+     */
     error_check() {
         let m_totalCount = 0;
         let m_ErrorCount = 0;
