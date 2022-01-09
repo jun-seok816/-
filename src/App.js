@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import styles from "./css/App.module.css"
 import Thead from "./component/Thead.js"
 import Tbody from "./component/Tbody.js"
-import Textarea from './component/TextArea';
+
 
 function App() {
   
@@ -28,7 +28,6 @@ function App() {
             p_month = {month}/>
         <Tbody p_year = {year} p_month = {month}/>
       </table>
-      <Textarea/>
     </div>
   );
 }
