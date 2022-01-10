@@ -27,5 +27,5 @@ React라이브러리를 활용하여 리렌더링없이 달력을 넘기도록 �
 - Tbody.module.css `Tbody컴포넌트의 css`
 - Thead.module.css `Thead컴포넌트의 css` 
 
-## javascript
+## javascript폴더
 - js_Date.js `만년달력 프로젝트에 필요한 메소드를 담고있는 클래스입니다`
