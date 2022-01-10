@@ -18,23 +18,19 @@ export default class js_Date {
         this.iv_plusDay = p_plusday;
     }
     /**
-     *@method sm_GetNowDate 
-     *
-     *@returns 현재 년월일을 param으로 넘긴 js_Date Instance를 return
+     * 현재 년월일에 대한 js_Date 객체를 반환합니다
+     *@returns {Object} js_Date 인스턴스
      */
     static sm_GetNowDate() {
         let m_Date = new Date();
         return new js_Date(m_Date.getFullYear(), m_Date.getMonth(), m_Date.getDate());
     }
 
-    im_getMonthLastDay() {
-        return js_Date.sm_getMonthLastDay(this.iv_year, this.iv_month);
-    }
     /**
-     * @method sm_getMonthLastDay - im_getMonthLastDay의 static메소드
+     * 각월의 마지막 날짜를 년도,월에 따라 반환합니다
      * @param {Number} p_year -년도
      * @param {Number} p_month -월
-     * @returns - 년월에 맞는 달의 마지막 일
+     * @returns {Number} 각월의 마지막 날짜
      */
     static sm_getMonthLastDay(p_year, p_month) {
         let lastDay = new Array(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
@@ -43,14 +39,14 @@ export default class js_Date {
             return 0;
         return lastDay[p_month - 1];
     }
-  
-    im_isYunYear() {
-        return js_Date.sm_isYunYear(this.iv_year);
+    im_getMonthLastDay() {
+        return js_Date.sm_getMonthLastDay(this.iv_year, this.iv_month);
     }
+  
     /**
-     * @method sm_isYunYear - im_isYunYear의 static 메소드
+     * p_year가 윤년인지 아닌지 반환
      * @param {Number} p_year -년도
-     * @returns - 윤년이냐 아니냐 true false 리턴
+     * @returns {Boolean} true or false
      */
     static sm_isYunYear(p_year) {
         let m_Result = false;
@@ -64,13 +60,14 @@ export default class js_Date {
             m_Result = true;
         return m_Result;
     }
-    im_yunYear() {
-        return js_Date.sm_yunYear(this.iv_year);
+    im_isYunYear() {
+        return js_Date.sm_isYunYear(this.iv_year);
     }
+   
     /**
-     * @method sm_yunYear - im_yunYear의 static 메소드
+     * p_year까지의 윤년 수를 반환
      * @param {Nuber} p_year - 년도
-     * @returns p_year 까지의 윤년이었던 해 수
+     * @returns {Number} 윤년 수
      */
     static sm_yunYear(p_year) {
         if (p_year < 1)
@@ -79,18 +76,19 @@ export default class js_Date {
             - Math.trunc(p_year / 100)
             + Math.trunc(p_year / 400);
     }
-
-    im_getDays() {
-        return js_Date.sm_getDays(this.iv_year, this.iv_month, this.iv_day);
+    im_yunYear() {
+        return js_Date.sm_yunYear(this.iv_year);
     }
 
+   
+
     /**
-     * @method sm_getDays - im_getDays의 static메소드
-     *
+     * 
+     * 0년 1월 1일 부터 년,월,일 까지의 일수를 반환
      * @param {Number} p_year - 년도
      * @param {Number} p_month -월
      * @param {Number} p_days  - 일
-     * @returns - 년,월,일 에서 0년 1월 1일의 총 일수를 리턴
+     * @returns {Number} 총 일수
      */
     static sm_getDays(p_year, p_month = 1, p_days = 1) {
         let m_Year = p_year;
@@ -109,27 +107,27 @@ export default class js_Date {
                     + p_days;
         return m_Result;
     }
+    im_getDays() {
+        return js_Date.sm_getDays(this.iv_year, this.iv_month, this.iv_day);
+    }
 
     /**
-     * 
-     * @returns 총 일수를 7로 나눠 매월 1일의 요일을 리턴
+     * 현재 년월일에 해당하는 요일을 산출하는 메소드 ,1~7을 일요일부터 토요일로 대입해서 구분
+     * @returns {Number} 1~7까지의 정수
      */
     im_getWeekDay() {
         let m_Days = this.im_getDays();
-
         let m_Result = m_Days % 7;
         if (m_Result === 0) m_Result = 7;
-
         return m_Result;
-
     }
     /**
-     * 
+     * p_year년,p_month월,p_day일 에서 p_plusDay만큼 더한 년월일을 반환
      * @param {Number} p_year -년도
      * @param {Number} p_month -월
      * @param {Number} p_day  -일
      * @param {Number} p_plusday -특정 일수 더하기
-     * @returns -년,월,일에 특정 일수를 더해서 계산한 년 월 일을 리턴
+     * @returns {String} ?년?월?일
      */
     im_DayCalculate(p_year, p_month, p_day, p_plusDay = 0) {
         let total = js_Date.sm_getDays(p_year, p_month) + p_day + p_plusDay;
@@ -158,7 +156,8 @@ export default class js_Date {
         return `${m_year}년${m_month}월${m_남은날수}일`;
     }
     /**
-     *  @method error_check - 모든 일수를 반복문으로 돌려 함수가 제대로된 값을 산출하는지 체크
+     * 모든 일수를 반복문으로 돌려 함수가 제대로된 값을 산출하는지 체크
+     * @return {void} - console로 확인
      */
     error_check() {
         let m_totalCount = 0;
