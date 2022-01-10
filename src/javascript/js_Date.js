@@ -19,7 +19,7 @@ export default class js_Date {
     }
     /**
      * 현재 년월일에 대한 js_Date 객체를 반환합니다
-     *@returns {Object} js_Date 인스턴스
+     *@returns {js_Date} js_Date 인스턴스
      */
     static sm_GetNowDate() {
         let m_Date = new Date();
