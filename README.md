@@ -3,16 +3,21 @@
   
 </div>
 
-[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fjun-seok816%2F-perennial-calendar&count_bg=%233D41C8&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=%EB%B0%A9%EB%AC%B8%EC%9E%90%EC%88%98&edge_flat=false)](https://hits.seeyoufarm.com)
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/72478198/148873910-9123bbc0-c462-4170-8f10-c59ba25dab2b.gif" alt="animated" />
+  
+  
 </p>
 
 
 0년부터 9999년까지의 달력만들기
 
-## 사용기술
+
+
+## Front-end Stack
+
+<img src="https://img.shields.io/badge/React-E34F26?style=flat-square&logo=React&logoColor=white"/>
 
 ### Javascript
 
