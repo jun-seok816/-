@@ -41,7 +41,7 @@ npm install -g create-react-app
 
 
 <div align ="center">
-  <h1>Directory structure Description</h1>
+  <h1>Directory tructure Description</h1>
 </div>
 
 ### public폴더
