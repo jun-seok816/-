@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>만년달력 만들기</h1>
+  <h1>📅만년달력 만들기📆</h1>
   <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fjun-seok816%2F-perennial-calendar&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/></a>
 </div>
 
@@ -11,19 +11,21 @@
 
 
 0년부터 9999년까지의 달력만들기
-
-
+본 프로젝트는 Javascript의 [__Date생성자__] 를 사용하지 않고 [나만의 js_Date클래스]를 사용하여 만들어졌습니다.
 
 ## Front-end Stack
+<div align="center">
+  <img src="https://img.shields.io/badge/React-3D41C8?style=flat-square&logo=React&logoColor=white"/>
+  <img src="https://img.shields.io/badge/JavaScript-EEEF16?style=flat-square&logo=JavaScript&logoColor=white"/>
+</div>
 
-<img src="https://img.shields.io/badge/React-3D41C8?style=flat-square&logo=React&logoColor=white"/>
 
 ### Javascript
 
 프로젝트에 필요한 메소드를 담고있는 클래스를 활용하였습니다
 클래스에 대한 정확한 정보는 [나만의 js_Date클래스]에 정리해두었습니다.
 
-[나만의 js_Date클래스]: https://github.com/jun-seok816/my_-js_Date-Class 
+
 
 ### React
 React라이브러리를 활용하여 리렌더링없이 달력을 넘기도록 구현하였습니다
@@ -49,4 +51,6 @@ React라이브러리를 활용하여 리렌더링없이 달력을 넘기도록 �
 - js_Date.js `만년달력 프로젝트에 필요한 메소드를 담고있는 클래스입니다`
 
 
-[downloads-badge]: https://img.shields.io/github/downloads/ajeetdsouza/zoxide/total?style=flat-square
+
+[나만의 js_Date클래스]: https://github.com/jun-seok816/my_-js_Date-Class 
+[__Date생성자__] :https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date/Date
