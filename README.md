@@ -1,13 +1,11 @@
 <div align="center">
   <h1>만년달력 만들기</h1>
-  
+  <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fjun-seok816%2F-perennial-calendar&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/></a>
 </div>
 
-
+<br/>
 <p align="center">
   <img src="https://user-images.githubusercontent.com/72478198/148873910-9123bbc0-c462-4170-8f10-c59ba25dab2b.gif" alt="animated" />
-  
-  
 </p>
 
 
